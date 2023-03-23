@@ -35,7 +35,6 @@ print(my_array_5)
 my_array_6 = np.zeros((2,3))
 print(my_array_6)
 
-
 #creamos un array todo de 1
 my_array_7 = np.ones((2,3))
 print(my_array_7)
@@ -47,3 +46,8 @@ print(my_array_8)
 #creamos un array vacio 
 my_array_9 = np.empty((4,3))
 print(my_array_9)
+
+#creamos un array con 1 y 0
+my_array_10 = np.eye(3, k = 1)
+print(my_array_10)
+
