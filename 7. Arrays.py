@@ -51,4 +51,46 @@ print(my_array_9)
 my_array_10 = np.eye(3, k = 1)
 print(my_array_10)
 
-#seguimos
+#podemos asignar valores al array
+my_array_10[my_array_10 == 0] = 2
+my_array_10[my_array_10 < 2] = 4
+print(my_array_10)
+my_array_10[2] = 3 #se asigna el valor a la fila 2
+print(my_array_10)
+
+#se asigna el valor la fila 0 hasta la 2
+my_array_10[:2] = 5 
+print(my_array_10)
+
+#se asigna el valor a la fila 1 hasta la ultima
+my_array_10[1:] = 7 
+print(my_array_10)
+
+#reemplazamos desde la fila 1 hasta el final y la columna 2 hasta el final por un 2
+my_array_11 = np.eye(3, k = 1)
+my_array_11[1:, 2:] = 2
+print(my_array_11)
+
+#ordenamos el array
+sorted_array = np.sort(my_array_11)
+print(sorted_array)
+
+#ordenamos el array por ejes "Y"
+sorted_array = np.sort(my_array_11, axis = 0) #el eje 0 es el vertical
+print(sorted_array)
+
+#ordenamos el array por ejes "X"
+sorted_array = np.sort(my_array_11, axis = -1) #el eje 0 es el horizontal
+print(sorted_array)
+
+#copiar arrays con view afecta el original
+array_view = sorted_array.view()
+array_view[:] = 5 #reemplazamos todos los elementos por 5
+print(array_view)
+print(sorted_array)
+
+#copiar arrays con copy NO afecta el original
+array_view = sorted_array.copy()
+array_view[:] = 6 #reemplazamos todos los elementos por 5
+print(array_view)
+print(sorted_array)
