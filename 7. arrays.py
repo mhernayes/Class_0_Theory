@@ -34,3 +34,7 @@ print(my_array_5)
 #creamos un array todo de 
 my_array_6 = np.zeros((2,3))
 print(my_array_6)
+
+#creamos un array todo de 
+my_array_7 = np.one((2,3))
+print(my_array_7)
