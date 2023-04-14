@@ -460,6 +460,7 @@ peliculas_accion = np.delete(peliculas_accion, 0, axis = 0)
 print(peliculas_accion)
 
 #cambiar el tipo de dato de un array
+a = np.array([1,2,3,4])
 a = a[:,i].astype(int)
 a = a[:,i].astype(str)
 a = a[:,i].astype(float)
