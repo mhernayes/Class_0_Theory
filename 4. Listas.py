@@ -1,3 +1,16 @@
+"""
+Cuando usar listas
+Por otro lado, las listas pueden ser fácilmente modificadas, ya que son mutables o dinamicas.
+
+Se puede añadir elementos, eliminarlos, cambiarlos de posición o intercambiar unos por otros.
+
+Las listas son útiles si lo que quieres es que tus datos sean flexibles, que puedan ser modificados cuando sea necesario.
+
+Las listas soportan una variedad de métodos incorporados de Python que llevan a cabo ciertas operaciones sobre ellas, operaciones no soportadas por la tuplas.
+
+Todo ello implica que la longitud, el tamaño de una lista pueda variar durante el ciclo de vida del programa.
+"""
+
 #In this document will see how to work whit "Lists".
 
 #definir listas de variables
@@ -180,20 +193,64 @@ print(min(lista))
 lista10 = [1,2,3,4,5]
 string = ''.join(lista10)
 print(lista10)
-"""""
-Cuando usar tuplas
-Las tuplas son una excelente opción si lo que quieres es que los datos de tu colección sean de solo lectura, que nunca cambien y se mantengan constantes. Tienen la capacidad de garantizar que los datos que contienen nunnca serán alterados.
 
-Las tuplas pueden utilizarse como claves en un diccionario siempre que contengan tipos inmutables (cadenas, números u otras tuplas). Una lista, al ser mutable, no puede utilizarse para este fin.
+"""COMPRESION DE LISTAS
+El método de compresión de listas en Python es una técnica que permite crear una nueva lista a partir de una o varias 
+secuencias de elementos existentes, utilizando una sintaxis concisa y legible.
+La sintaxis básica de la compresión de listas es la siguiente:
 
-Cuando usar listas
-Por otro lado, las listas pueden ser fácilmente modificadas, ya que son mutables o dinamicas.
+nueva_lista = [expresion for elemento in secuencia]
 
-Se puede añadir elementos, eliminarlos, cambiarlos de posición o intercambiar unos por otros.
+En esta sintaxis, "expresión" es una expresión que se evalúa para cada elemento en la secuencia, y los resultados se agregan a la "nueva_lista". 
+Por ejemplo, si tenemos una lista de números y queremos crear una nueva lista con el doble de cada número, podemos hacer lo siguiente:
+"""
+numeros = [1, 2, 3, 4, 5]
+dobles = [num * 2 for num in numeros]
+print(dobles)  # Output: [2, 4, 6, 8, 10]
 
-Las listas son útiles si lo que quieres es que tus datos sean flexibles, que puedan ser modificados cuando sea necesario.
+""" 
+También es posible agregar una o varias cláusulas if para filtrar los elementos de la secuencia. 
+Por ejemplo, si queremos crear una nueva lista solo con los números pares de la lista original, podemos hacer lo siguiente:
+"""
+numeros = [1, 2, 3, 4, 5]
+pares = [num for num in numeros if num % 2 == 0]
+print(pares)  # Output: [2, 4]
 
-Las listas soportan una variedad de métodos incorporados de Python que llevan a cabo ciertas operaciones sobre ellas, operaciones no soportadas por la tuplas.
+"""
+La compresión de listas es una forma conveniente y eficiente de crear nuevas listas en Python, especialmente cuando se trabaja con datos de grandes volúmenes. 
+Sin embargo, es importante tener en cuenta que su uso excesivo puede hacer que el código sea menos legible y difícil de mantener.
+"""
 
-Todo ello implica que la longitud, el tamaño de una lista pueda variar durante el ciclo de vida del programa.
+productos = [{"producto_1": 
+            {"nombre": "leche",
+            "precio": 100,
+            }},
+        {"producto_2":
+            {"nombre": "manteca",
+            "precio": 50,
+            }}
+        ]
+
+lista = [info_productos for producto in productos for info_productos in producto.vlaues() if list(producto.keys())[0] == "producto_1"]
+print(lista)
+
+"""
+lista = [...]: Esta línea crea una nueva lista llamada lista y la inicializa con los elementos que se generarán en la lista comprehension.
+
+info_productos for producto in productos: Esto establece el primer nivel de iteración en la lista comprension. 
+Se recorre cada elemento en la lista productos, y se asigna a la variable producto.
+
+for info_productos in producto.values(): Esta es la segunda cláusula for dentro de la lista comprension. 
+Itera sobre los valores de cada diccionario contenido en producto y los asigna a la variable info_productos. 
+En otras palabras, se recorren los valores de cada diccionario dentro de la lista productos.
+
+if list(producto.keys())[0] == "producto_1": Esta es una cláusula if que filtra los elementos en función de una condición. 
+En este caso, verifica si la primera clave en el diccionario producto es igual a "producto_1". La función list(producto.keys())[0] 
+obtiene la lista de claves del diccionario producto y luego selecciona el primer elemento de esa lista.
+
+info_productos: Este es el elemento que se agrega a la lista lista. En cada iteración, se añade el valor actual 
+de info_productos a la lista.
+
+En resumen, la lista comprehension recorre la lista productos, luego recorre los valores de cada diccionario dentro 
+de productos, y solo agrega a la lista lista los valores que provienen del diccionario cuya clave es "producto_1".
 """

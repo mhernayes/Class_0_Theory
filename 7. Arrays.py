@@ -1,4 +1,7 @@
-#Los arrays estan pensados para guardar un unico tipo de dato.
+"""
+ARRAYS:
+Los arrays estan pensados para guardar un unico tipo de dato.
+"""
 
 import numpy as np
 
@@ -415,8 +418,11 @@ print(num_filas)
 fechas = ventas[:,0]
 venta_dia = ventas[:,1]
 categoria = ventas[:,2]
-
+print(ventas[1:4, 0:2]) #accedemos a las filas de 1 al 4 de las columnas 0 al 2
+print(ventas[1:4:2, 0:2:2]) #los ultimos ":" representan el paso que se acceden los slices del array
+print(ventas[:, ::-1]) #los primeros ":" respresntan todas las filas, el segundo ":" representa toas las columnas y ":-1" es el paso inverso de las columnas
 #quedarme con una columna del array ventas
+print(ventas[:, [0,2]]) #se muestan todas las filas pero solamente las columnas 0 y 2
 fecha = np.array([venta[0] for venta in ventas])
 print(fecha)
 
@@ -548,3 +554,11 @@ array_histograma, bin_array = np.histogram(array_años, bin_array)
 # Imprimimos los resultados
 for i in range(len(array_histograma)):
     print("Década {}: {}".format(bin_array[i], array_histograma[i]))
+
+
+"MASCARAS BOOLEANAS"
+
+mi_array = np.array([0,1,2,3,4,5,6,7,8,9])
+otro_array = mi_array > 5
+print(otro_array) #imprime un array booloeano con los datos mayores a 5
+print(mi_array[mi_array>5]) #imprime un array con los datos de mi_array mayor a 3
