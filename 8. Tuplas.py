@@ -112,4 +112,3 @@ string, entero, booleano = mi_tupla_2
 print("El string es:", string)
 print("El entero es:", entero)
 print("El booleano es:", booleano)
-

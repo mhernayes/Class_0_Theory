@@ -130,7 +130,6 @@ programadores_2 = {
         "Fortran": 5, 
     }
 }
-
 #notas = for nombre, lenguaje in programadores.values() for lenguaje in programador
 
 
