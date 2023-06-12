@@ -131,5 +131,3 @@ programadores_2 = {
     }
 }
 #notas = for nombre, lenguaje in programadores.values() for lenguaje in programador
-
-
